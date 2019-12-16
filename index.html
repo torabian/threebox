@@ -1,0 +1,54 @@
+<div id="render"></div>
+<div id="app">
+  <div class="row">
+    <label>Width:</label>
+    <input type="number" max="20" v-model="width" />
+  </div>
+
+  <div class="row">
+    <label>Height:</label>
+    <input type="number" max="20" v-model="height" />
+  </div>
+
+  <div class="row">
+    <label>Depth:</label>
+    <input type="number" max="20" v-model="depth" />
+  </div>
+</div>
+
+<style>
+  .row {
+    padding: 10px;
+  }
+  .row label {
+    display: block;
+  }
+  input {
+    margin-top: 5px;
+    font-size: 18px;
+    padding: 5px;
+  }
+  body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  #run {
+    position: absolute;
+  }
+
+  #app {
+    background-color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    top: 0;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script src="https://threejs.org/build/three.min.js"></script>
+<script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.7.0/Tween.js"></script>
+<script src="script.js"></script>

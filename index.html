@@ -3,6 +3,18 @@
 </button>
 
 <body></body>
+<div id="app">
+  {{ message }}
+
+  <label>Width:</label>
+  <input type="text" v-model="width" />
+
+  <label>Height:</label>
+  <input type="text" v-model="height" />
+
+  <label>Depth:</label>
+  <input type="text" v-model="depth" />
+</div>
 
 <style>
   body {
@@ -13,7 +25,18 @@
   #run {
     position: absolute;
   }
+
+  #app {
+    background-color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    top: 0;
+  }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 <script src="https://threejs.org/build/three.min.js"></script>
 <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.7.0/Tween.js"></script>

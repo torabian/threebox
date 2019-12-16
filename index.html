@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <div id="render"></div>
 <div id="app">
   <div class="row">
@@ -27,6 +29,7 @@
     margin-top: 5px;
     font-size: 18px;
     padding: 5px;
+    width: 50px;
   }
   body {
     overflow: hidden;
@@ -38,12 +41,17 @@
   }
 
   #app {
+    display: flex;
     background-color: white;
     position: absolute;
     right: 0;
+    left: 0;
     bottom: 0;
-    width: 300px;
-    top: 0;
+  }
+  @media only screen and (min-width: 768px) {
+    #app {
+      left: 0;
+    }
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

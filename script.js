@@ -36,7 +36,7 @@ function init(width, height, depth) {
   camera.position.set(-0.5, 0.5, 1).setLength(10);
 
   renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(window.innerWidth - 300, window.innerHeight);
+  renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0xcccccc);
   document.getElementById('render').innerHTML = '';
   document.getElementById('render').appendChild(renderer.domElement);
@@ -50,7 +50,10 @@ function draw(height, depth, width) {
   var geom = new THREE.PlaneGeometry(width, height);
   var side0 = new THREE.Mesh(
     geom,
-    new THREE.MeshBasicMaterial({ color: 'white', wireframe: true })
+    new THREE.MeshBasicMaterial({
+      color: 'white',
+      side: THREE.DoubleSide
+    })
   );
   side0.rotation.x = Math.PI / 2;
   scene.add(side0);
@@ -134,6 +137,9 @@ var app = new Vue({
     }
   },
   created() {
+    window.addEventListener('resize', () => {
+      init(this.width, this.height, this.depth);
+    });
     init(this.width, this.height, this.depth);
     foldTheCube();
   }

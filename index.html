@@ -1,22 +1,33 @@
-<button id="run">
-  PressMe
-</button>
-
-<body></body>
+<div id="render"></div>
 <div id="app">
-  {{ message }}
+  <div class="row">
+    <label>Width:</label>
+    <input type="number" max="20" v-model="width" />
+  </div>
 
-  <label>Width:</label>
-  <input type="text" v-model="width" />
+  <div class="row">
+    <label>Height:</label>
+    <input type="number" max="20" v-model="height" />
+  </div>
 
-  <label>Height:</label>
-  <input type="text" v-model="height" />
-
-  <label>Depth:</label>
-  <input type="text" v-model="depth" />
+  <div class="row">
+    <label>Depth:</label>
+    <input type="number" max="20" v-model="depth" />
+  </div>
 </div>
 
 <style>
+  .row {
+    padding: 10px;
+  }
+  .row label {
+    display: block;
+  }
+  input {
+    margin-top: 5px;
+    font-size: 18px;
+    padding: 5px;
+  }
   body {
     overflow: hidden;
     margin: 0;
